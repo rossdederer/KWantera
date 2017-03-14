@@ -1,5 +1,5 @@
 # KWantera Stock Sample Application 
-The application is broken into two parts.  The client side that contains the charting logic and the server side which collects data located under the /data direcotry and provides access to them via a webapi/ 
+The application is comprised into two sections /client and /server.  The client side that contains the charting logic and the server side which collects data located under the /data direcotry and provides access to them via a webapi/ 
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.0.0-rc.1.
 

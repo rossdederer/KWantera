@@ -2,7 +2,9 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.0.0-rc.1.
 This project Utitlizes Angular 2 built with Typescript.  It requests data from its server component and displays stock market close data in a HighChart 
+![alt text](http://i.imgur.com/R2SeGEE.png)
 
+Included is a function that calculates a moving average for a given time range. 
 ## Installing the necesary modules 
 This application uses NodeJS to server CSV data to a client via webAPI.   NodeJS 6.9.4 is necessary to run and install the packages.  Verify you have an update to date version nodeJS installed by typing 
 ```
@@ -13,6 +15,8 @@ To install all the modules required type
 ```
 npm install
 ```
+
+
 
 ## Running the Application
 The application runs on Node.   

@@ -1,0 +1,9 @@
+
+<div style="padding: 10px; ">
+  You can use your mouse to right click on the chart surface and <b>zoom in</b> and to further examine the chart.After you are complete, click the  <b>"reset zoom"</b> button in the top left  of the chart surface.If you want to examine a specific series, click on the legend located on the bottom of the chart.  You can <b>toggle</b> visibility of each of the three series</div>
+<div style="padding: 10px; ">
+  The chart displays <b> moving averages </b> that involve calculating a culmulative average of current value based on the aveagae of the past values. 
+</div>
+<div style="padding: 10px; "> The current parameter for the moving average is <b>{{ movingAverage }}</b> change this in the default constructor for <i>chart.component.html</i>
+</div>
+ <chart [options]="options" style="width:900px; height:80%;"></chart>

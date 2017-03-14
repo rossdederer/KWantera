@@ -1,0 +1,17 @@
+{
+  "name": "kwantera-ross",
+  "version": "1.0.0",
+  "description": "server-side stand alone web api that server csv files from disk. ",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "Ross W Dederer",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.17.1",
+    "cors": "^2.8.1",
+    "express": "^4.15.2"
+  }
+}

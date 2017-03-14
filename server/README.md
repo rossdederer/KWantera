@@ -3,7 +3,7 @@ This is the server side portion of the KWantera application.  This is a standalo
 ## Installing the necesary modules 
 This application uses NodeJS to server CSV data to a client via webAPI.   NodeJS 6.9.4 is necessary to run and install the packages.  Verify you have an update to date version nodeJS installed by typing 
 ```
-node -v.  
+node -v
 ```
 
 To install all the modules required type

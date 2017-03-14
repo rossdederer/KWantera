@@ -31,3 +31,5 @@ localhost:3000/tsla
 ## Third-party Dependencies 
 This application implements Cors. 
 Cors is a node.js Package for Express.  This will allow for cross origin requests.
+
+NodeJS 6.9.4

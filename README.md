@@ -10,7 +10,7 @@ Included is a function that calculates a moving average for a given time range. 
 
 ## Features
 You can right click to zoom onto any date range to view a more detailed view. 
-![alt test](http://i.imgur.com/vAqIiQPl.gif)
+![click here to view functionality ](http://imgur.com/vAqIiQP)
 
 ## Dependencies, Third Party libs, Notes 
 * NodeJS

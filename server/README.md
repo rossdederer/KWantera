@@ -10,6 +10,7 @@ To install all the modules required type
 ```
 npm install
 ```
+## Running the node server application
 
 After the packages have complemeted downloading, run the following commands
 ```
@@ -26,5 +27,7 @@ localhost:3000/ibm
 localhost:3000/spy
 localhost:3000/tsla
 ```
+
+## Third-party Dependencies 
 This application implements Cors. 
 Cors is a node.js Package for Express.  This will allow for cross origin requests.

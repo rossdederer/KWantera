@@ -7,6 +7,7 @@ This project Utitlizes Angular 2 built with Typescript.  It requests data from i
 Included is a function that calculates a moving average for a given time range.  The default here is 5, you can change this value in the default constructor for chart.component.ts
 
 ## Dependencies, Third Party libs, Notes 
-NodeJS
-Angular 2 
-Express
+*NodeJS
+*Angular 2 
+*Express
+*HighCharts 

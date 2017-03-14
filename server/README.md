@@ -1,4 +1,5 @@
-This is the server side portion of the KWantera 
+This is the server side portion of the KWantera application.  This is a standalone webAPI built using ExpressJS.  This application is required to be running for the client app. 
+
 ## Installing the necesary modules 
 This application uses NodeJS to server CSV data to a client via webAPI.   NodeJS 6.9.4 is necessary to run and install the packages.  Verify you have an update to date version nodeJS installed by typing 
 ```

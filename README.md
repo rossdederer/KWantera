@@ -9,8 +9,8 @@ This project Utitlizes Angular 2 built with Typescript.  It requests data from i
 Included is a function that calculates a moving average for a given time range.  The default here is 5, you can change this value in the default constructor for chart.component.ts
 
 ## Features
-You can right click to zoom onto any date range to view a more detailed view. 
-![click here to view functionality ](http://imgur.com/vAqIiQP)
+* right click to zoom onto any date range to view a more detailed view. 
+* toggle the various series by clicking on the legends 
 
 ## Dependencies, Third Party libs, Notes 
 * NodeJS

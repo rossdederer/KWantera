@@ -27,6 +27,8 @@ localhost:3000/ibm
 localhost:3000/spy
 localhost:3000/tsla
 ```
+## Logging
+The application will log requests in the console so keep an eye there. 
 
 ## Third-party Dependencies 
 This application implements Cors. 

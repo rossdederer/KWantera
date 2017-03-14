@@ -22,6 +22,8 @@ will build and deploy the application to `localhost` on the default node port `4
 ```
 localhost:4200
 ```
+Navigate to that host in your browser to view the application. 
+
 ## Development server
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 

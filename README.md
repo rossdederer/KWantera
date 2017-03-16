@@ -1,7 +1,7 @@
 # KWantera Stock Sample Application 
 The application is comprised into two sections /client and /server.  The client side contains the charting logic and the server side collects data located under the /data direcotry and provides access to them via a three different webapi get requests
  It requests data from its server component and displays stock market close data in a HighChart as shown below: 
-![alt text](http://i.imgur.com/rfXQRVT.png)
+![alt text](http://i.imgur.com/4bzjKsU.png)
 
 HighCharts 
 

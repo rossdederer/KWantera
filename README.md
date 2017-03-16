@@ -1,7 +1,7 @@
 # KWantera Stock Sample Application 
 This Node application is comprised into two sections /client and /server.  The client side contains the charting logic and the server side collects data located under the /data direcotry and provides access to them via a three different webapi get requests
  It requests data from its server component and displays stock market close data in a HighChart as shown below: 
-![image not loaded](http://i.imgur.com/4bzjKsU.png)
+![image not loaded](http://i.imgur.com/1t4msJN.png)
 Each section of the application contains instructions in the readme to make getting started simple. 
 
 ## Features
@@ -14,7 +14,7 @@ chart: {
    zoomType: 'x' 
 },
 ```
-![image not loaded](http://i.imgur.com/1t4msJN.png)
+![image not loaded](http://i.imgur.com/qjLYO5Z.png)
 * toggle the various series by clicking on the legends 
 HighCharts does not include any regression on averages in its charting library, you need to use the stock charts for that type of funcitonality.    We can manually <b>calculate the moving average</b> and add it to the charting surface as a seperate series. 
 ```javascript

@@ -14,7 +14,7 @@ chart: {
    zoomType: 'x' 
 },
 ```
-![image not loaded](http://i.imgur.com/qjLYO5Z.png)
+![image not loaded](http://i.imgur.com/1t4msJN.png)
 * toggle the various series by clicking on the legends 
 HighCharts does not include any regression on averages in its charting library, you need to use the stock charts for that type of funcitonality.    We can manually <b>calculate the moving average</b> and add it to the charting surface as a seperate series. 
 ```javascript

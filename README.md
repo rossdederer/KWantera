@@ -1,7 +1,6 @@
 # KWantera Stock Sample Application 
 The application is comprised into two sections /client and /server.  The client side contains the charting logic and the server side collects data located under the /data direcotry and provides access to them via a three different webapi get requests
-
-This project Utitlizes Angular 2 built with Typescript.  It requests data from its server component and displays stock market close data in a HighChart as shown below: 
+ It requests data from its server component and displays stock market close data in a HighChart as shown below: 
 ![alt text](http://i.imgur.com/rfXQRVT.png)
 
 HighCharts 
@@ -9,13 +8,14 @@ HighCharts
 Included is a function that calculates a moving average for a given time range.  The default here is 5, you can change this value in the default constructor for chart.component.ts
 
 ## Features
+* This project Utitlizes Angular 2 built with Typescript.  
 * right click to zoom onto any date range to view a more detailed view. 
-Highcharts has interactive x-axis zooming built in by passing the object a zoom type
+Highcharts has <b>interactive x-axis zooming</b> built in by passing the object a zoom type
 ```
 chart: { type: 'line',zoomType: 'x' },
 ```
 * toggle the various series by clicking on the legends 
-HighCharts does not include any regression on averages in its charting library, you need to use the stock charts for that type of funcitonality.    We can manually calculate the moving average and add it to the charting surface as a seperate series. 
+HighCharts does not include any regression on averages in its charting library, you need to use the stock charts for that type of funcitonality.    We can manually <b>calculate the moving average</b> and add it to the charting surface as a seperate series. 
 ```
      calculateMovingAverage(arr,currentIndex){
             // get the currentVal to begin calculating an average 
@@ -37,6 +37,7 @@ HighCharts does not include any regression on averages in its charting library, 
             return currentVal ; 
     }
 ```
+* the HighCharts line chart has native support for <b>interactive toggling</b> between the various stocks.   Click on the series in the legend to show or hide the various series. 
 
 ## Dependencies, Third Party libs, Notes 
 * NodeJS

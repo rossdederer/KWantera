@@ -38,4 +38,4 @@ calculateMovingAverage(arr,currentIndex){
 * [HighCharts](http://www.highcharts.com/) 
 
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.0.0-rc.1.
+Additionally, this project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.0.0-rc.1.

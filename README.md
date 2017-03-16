@@ -8,10 +8,13 @@ HighCharts
 
 Included is a function that calculates a moving average for a given time range.  The default here is 5, you can change this value in the default constructor for chart.component.ts
 
+## Features
+* right click to zoom onto any date range to view a more detailed view. 
 Highcharts has interactive x-axis zooming built in by passing the object a zoom type
 ```
 chart: { type: 'line',zoomType: 'x' },
 ```
+* toggle the various series by clicking on the legends 
 HighCharts does not include any regression on averages in its charting library, you need to use the stock charts for that type of funcitonality.    We can manually calculate the moving average and add it to the charting surface as a seperate series. 
 ```
      calculateMovingAverage(arr,currentIndex){
@@ -34,11 +37,6 @@ HighCharts does not include any regression on averages in its charting library, 
             return currentVal ; 
     }
 ```
-
-
-## Features
-* right click to zoom onto any date range to view a more detailed view. 
-* toggle the various series by clicking on the legends 
 
 ## Dependencies, Third Party libs, Notes 
 * NodeJS

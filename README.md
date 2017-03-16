@@ -12,7 +12,10 @@ Included is a function that calculates a moving average for a given time range. 
 * right click to zoom onto any date range to view a more detailed view. 
 Highcharts has <b>interactive x-axis zooming</b> built in by passing the object a zoom type
 ```javascript
-chart: { type: 'line',zoomType: 'x' },
+chart: { 
+   type: 'line',
+   zoomType: 'x' 
+},
 ```
 * toggle the various series by clicking on the legends 
 HighCharts does not include any regression on averages in its charting library, you need to use the stock charts for that type of funcitonality.    We can manually <b>calculate the moving average</b> and add it to the charting surface as a seperate series. 

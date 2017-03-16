@@ -36,16 +36,81 @@ export class ChartComponent implements OnInit {
     averageSPY: any = []; 
 
     constructor(private stockService: StockService) {
-        this.movingAverage = 5; 
-        // default constructor
+        this.movingAverage = 25; 
+
     }
 
     ngOnInit() {
-        // call the functions to load the data 
-        this.loadData(); 
+    var currentVal ; 
+    var movingAverage = this.movingAverage;
+
+    this.stockService.getIbm().subscribe(
+        response => {
+            this.ibmdatares = response;
+            var counter =1 ; 
+            for ( var i in this.ibmdatares )
+            {
+                
+                this.chartDates.push(this.ibmdatares[i].Date);
+                this.chartDataIbm.push(this.ibmdatares[i].Close);
+                if(counter > this.movingAverage ){
+                    this.averageIBM.push(this.calculateMovingAverage(this.chartDataIbm, counter));
+                }
+                else {
+                    this.averageIBM.push(""); 
+                }
+                counter++; 
+                
+            }
+            
+            this.drawGraph(); 
+    }); 
+
+    this.stockService.getSpy().subscribe(
+        response => {
+            this.spydatares = response;
+            var counter =1 ; 
+            for ( var i in this.spydatares )
+            {
+                this.chartDataSpy.push(this.spydatares[i].Close);
+                if(counter > this.movingAverage ){
+                    this.averageSPY.push(this.calculateMovingAverage(this.chartDataSpy, counter));
+                }
+                else {
+                    this.averageSPY.push(""); 
+                }
+                counter++; 
+            }
+            this.drawGraph(); 
+    }); 
+
+    this.stockService.getTsla().subscribe(
+        response =>   
+        { 
+            this.tsladatares = response;
+            var counter =1 ;
+            for ( var i in this.tsladatares )
+            {
+                this.chartDataTsla.push(this.tsladatares[i].Close);
+                if(counter > this.movingAverage ){
+                    this.averageTSLA.push(this.calculateMovingAverage(this.chartDataTsla, counter));
+                }
+                else {
+                    this.averageTSLA.push(""); 
+                }
+                counter++; 
+            }
+            this.drawGraph(); 
+        }); 
+                
     }
-    calculateMovingAverage(arr,currentIndex){
-            // get the currentVal to begin calculating an average 
+    
+    calculateMovingAverage(arr,currentIndex)
+    {
+    
+
+           
+         // get the currentVal to begin calculating an average 
             var movingAverage = this.movingAverage;
             var currentVal = 0 ;
 
@@ -63,87 +128,14 @@ export class ChartComponent implements OnInit {
             
             return currentVal ; 
     }
-
-
-    buildIBMArray(){
-        // split the csv data by new lines and build an array of rows 
-        var rows = this.ibmdatares.split('\n');
-         // loop through all the rows in the array
-        for(var currentIndex = 1 ; currentIndex < rows.length ; currentIndex++ )
-        {
-            // split each row up by the CSV , demlimiter and build individual record 
-            var records = rows[currentIndex].split(',');
-      
-            // insert the close value, indice 5, into the array for the chart 
-            this.chartDataIbm.push(parseInt(records[4]));
-            this.chartDates.push(new Date(records[0]));
-            if(currentIndex > this.movingAverage) 
-            this.averageIBM.push(this.calculateMovingAverage(this.chartDataIbm,currentIndex));
-        }
-    }
-    
-    buildSPYArray(){
-        // split the csv data by new lines and build an array of rows 
-        var rows = this.spydatares.split('\n');
-        // loop through all the rows in the array 
-        for(var currentIndex = 1 ; currentIndex < rows.length ; currentIndex++ )
-        {
-            // split each row up by the CSV , demlimiter and build individual record 
-            var records = rows[currentIndex].split(',');
-   
-            // insert the close value, indice 5, into the array for the chart 
-            this.chartDataSpy.push(parseInt(records[4]));
-            if(currentIndex > this.movingAverage) 
-            this.averageSPY.push(this.calculateMovingAverage(this.chartDataSpy,currentIndex));
-        }
-    }
-    buildTSLAArray() {
-        // split the csv data by new lines and build an array of rows 
-        var rows = this.tsladatares.split('\n');
-        // loop through all the rows in the array 
-        for(var currentIndex = 1 ; currentIndex < rows.length ; currentIndex++ )
-        {
-            // split each row up by the CSV , demlimiter and build individual record 
-            var records = rows[currentIndex].split(',');
-    
-            // insert the close value, indice 5, into the array for the chart 
-            this.chartDataTsla.push(parseInt(records[4]));
-            if(currentIndex > this.movingAverage) 
-            this.averageTSLA.push(this.calculateMovingAverage(this.chartDataTsla,currentIndex));
-        }
-    }
     
 
-    // three seperate WebAPI calls to return the values for each stock.  
-    loadData(){
+
     // call web api to get IBM Csv data 
     // configure the highcharts  
     // these values are used to calcuate the moving average of the points 
-    var currentVal ; 
-    var movingAverage = this.movingAverage;
 
-    this.stockService.getIbm().subscribe(
-        response => {
-            this.ibmdatares = response;
-            this.buildIBMArray(); 
-            this.drawGraph(); 
-    }); 
 
-    this.stockService.getSpy().subscribe(
-        response => {
-            this.spydatares = response;
-            this.buildSPYArray(); 
-            this.drawGraph(); 
-    }); 
-
-    this.stockService.getTsla().subscribe(
-        response =>   
-        { 
-            this.tsladatares = response;
-            this.buildTSLAArray();
-            this.drawGraph(); 
-        }); 
-    }
     
     drawGraph(){
         // HighCharts takes an Object of options.
@@ -153,11 +145,10 @@ export class ChartComponent implements OnInit {
         // I bind the x-axis to the array of ChartDates 
         // I create 6 series for data, three for raw and 3 for the moving average 
         this.options = {
-            title : { text : 'Closing Stock values for 2013 per business day w/ moving average '+this.movingAverage +' days'},
+            title : { text : 'Stock Closing Prices ( 2013 ) : '+this.movingAverage +' day moving average'},
             chart: { type: 'line',zoomType: 'x' },
             xAxis: {
                 categories: this.chartDates,
-                tickInterval: 1,
                 title: {
                     enabled: true,
                     text: 'Trading dates',
@@ -166,9 +157,17 @@ export class ChartComponent implements OnInit {
                     }
                 },
                 labels:{
-                    rotation: 20,
+                    rotation: -20,
                     formatter: function() {
-                        return new Date(this.value).toDateString(); 
+                        var d = new Date(this.value);
+                        var curr_date = d.getDate();
+                        var m_names = new Array("Jan", "Feb", "March", 
+                            "April", "May", "June", "July", "Aug", "Sept", 
+                            "Oct", "Nov", "Dec");
+                        var curr_month = d.getMonth();
+
+
+                        return ''+m_names[curr_month]+' '+ curr_date ; 
                     }
                 },
                  type: 'datetime',

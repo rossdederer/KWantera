@@ -10,8 +10,12 @@
   "author": "Ross W Dederer",
   "license": "ISC",
   "dependencies": {
+    "assert": "^1.4.1",
     "body-parser": "^1.17.1",
     "cors": "^2.8.1",
-    "express": "^4.15.2"
+    "express": "^4.15.2",
+    "mongodb": "^2.2.24",
+    "mongoskin": "^2.1.0",
+    "q": "^1.4.1"
   }
 }

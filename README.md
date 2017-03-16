@@ -18,23 +18,16 @@ chart: { type: 'line',zoomType: 'x' },
 HighCharts does not include any regression on averages in its charting library, you need to use the stock charts for that type of funcitonality.    We can manually <b>calculate the moving average</b> and add it to the charting surface as a seperate series. 
 ```
      calculateMovingAverage(arr,currentIndex){
-            // get the currentVal to begin calculating an average 
             var movingAverage = this.movingAverage;
             var currentVal = 0 ;
-
-            // the lower bound here will be the currentIndex of the loop and subtract that from the moving average param
-            // this will start calculating the average from the begining once the movingaverage parameter is hit 
             var lowerBound = currentIndex - movingAverage;
-            // while we are in the safe zone loop through the array 
+            
             while ( lowerBound < currentIndex ) {
                 currentVal = currentVal +  arr[lowerBound];
                 lowerBound++;
             }
-            // calculate the average here,  totalvalue of currentIndex-movingAvera param divided by the moving movingAverage param 
-            currentVal = currentVal / movingAverage ; 
-            // push the calculated value into the array to display in the chart 
-            
-            return currentVal ; 
+         currentVal = currentVal / movingAverage ;       
+         return currentVal ; 
     }
 ```
 * the HighCharts line chart has native support for <b>interactive toggling</b> between the various stocks.   Click on the series in the legend to show or hide the various series. 

@@ -42,6 +42,7 @@ calculateMovingAverage(arr,currentIndex){
 * [NodeJS](https://nodejs.org/en/)
 * [Angular 2](https://angular.io/) 
 * [HighCharts](http://www.highcharts.com/) 
+* [Express](http://expressjs.com/) 
 
 
 Additionally, this project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.0.0-rc.1.

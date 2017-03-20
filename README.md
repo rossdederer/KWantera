@@ -7,6 +7,9 @@ Each section of the application contains instructions in the readme to make gett
 ## Features
 * This project Utitlizes <b>Angular 2</b> built with <b>Typescript</b>.  
 * The application was building us <b>Mongo</b>.  If you want to connect the application to your own mongoDB, adjust the URL variable under /server/server.js.   I have it pointing to my local DB on my network. 
+```javascript
+var URL = 'mongodb://172.16.0.9:27017/stocks';
+```
 * right click to zoom onto any date range to view a more detailed view. 
 Highcharts has <b>interactive x-axis zooming</b> built in by passing the object a zoom type
 ```javascript

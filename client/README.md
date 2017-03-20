@@ -11,8 +11,6 @@ To install all the modules required type
 npm install
 ```
 
-
-
 ## Running the Application
 The application runs on Node.   
 ```
